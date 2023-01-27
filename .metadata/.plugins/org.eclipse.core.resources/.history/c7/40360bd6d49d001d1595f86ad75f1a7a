@@ -4,8 +4,8 @@ import java.io.File;
 import java.util.Scanner;
 
 public class ClientInterface {
-	static File workingDirectory = null;
 	
+	static File workingDirectory = null;
 	public static void workingDirectory(){
 		do {
 			Scanner sc = new Scanner(System.in);
@@ -22,7 +22,6 @@ public class ClientInterface {
 	        	System.out.println(workingDirectory.getPath() + " is not a valid path for directory....pleaes enter valid path\n");
 		}while(!workingDirectory.isDirectory());	
     }
-	
 	public static void welcome(){
 		System.out.println("Welcome to LockedMe File System !!!!!\n");
 		System.out.println("Developed by: Hossam Mousa\n");
@@ -43,8 +42,12 @@ public class ClientInterface {
 	
 	public static void main(String[] args) {
 		welcome();
+		runningMenu();
+		welcome();
+		//runningMenu();
 		Scanner sc1 = new Scanner(System.in);
 		boolean exit = false;
+		
 		while(!exit) {
 			runningMenu();
 			int choice = sc1.nextInt();
@@ -72,7 +75,6 @@ public class ClientInterface {
 		}
 		
 		System.out.println("Logged out successfully from LockedMe.... Goodbye!!!");
-		
 	}
 
 }
