@@ -45,7 +45,6 @@ public class ClientInterface {
 		welcome();
 		Scanner sc1 = new Scanner(System.in);
 		boolean exit = false;
-		new Edit();
 		while(!exit) {
 			runningMenu();
 			int choice = sc1.nextInt();
@@ -57,14 +56,8 @@ public class ClientInterface {
 					System.out.println("\nHere you are the contents of the your working directory: \n");
 					break;
 				case 2:
-					System.out.println("Enter The File Name You Want To Add: \n");
-					String fileToAdd = sc1.next();
-					Edit.addFile(fileToAdd, workingDirectory);
 					break;
 				case 3:
-					System.out.println("Enter The File Name You Want To Delete: \n");
-					String fileToDelete = sc1.next();
-					Edit.deleteFile(fileToDelete, workingDirectory);
 					break;
 				case 4:
 					break;

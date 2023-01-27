@@ -65,6 +65,7 @@ public class ClientInterface {
 					System.out.println("Enter The File Name You Want To Delete: \n");
 					String fileToDelete = sc1.next();
 					Edit.deleteFile(fileToDelete, workingDirectory);
+					
 					break;
 				case 4:
 					break;
