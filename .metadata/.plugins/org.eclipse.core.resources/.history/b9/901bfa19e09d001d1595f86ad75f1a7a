@@ -58,13 +58,10 @@ public class ClientInterface {
 					break;
 				case 2:
 					System.out.println("Enter The File Name You Want To Add: \n");
-					String fileToAdd = sc1.next();
-					Edit.addFile(fileToAdd, workingDirectory);
+					String fileName = sc1.next();
+					Edit.addFile(fileName, workingDirectory);
 					break;
 				case 3:
-					System.out.println("Enter The File Name You Want To Delete: \n");
-					String fileToDelete = sc1.next();
-					Edit.deleteFile(fileToDelete, workingDirectory);
 					break;
 				case 4:
 					break;

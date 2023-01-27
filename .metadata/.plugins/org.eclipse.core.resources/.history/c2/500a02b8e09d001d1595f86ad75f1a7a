@@ -27,7 +27,8 @@ public class Edit {
 	    if(file.delete()) 
 	        System.out.println("File deleted: " + file.getName() + "\n");
 	    else   
-	        System.out.println("Failed to delete this File....Maybe it is a Folder and it is not Empty...Kindly check.\n");	      
+	        System.out.println("File already exists.");
+		      
 	}
 	
 }
