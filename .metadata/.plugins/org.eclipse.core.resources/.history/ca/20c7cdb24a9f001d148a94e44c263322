@@ -1,0 +1,27 @@
+package lockedme;
+
+import java.io.File;
+
+public class Search {
+	public static void search(File dir, String fileName) {
+		List forSort = new List();
+		File processingDirectory = dir;
+		String filePath = processingDirectory.getPath() + "\\" + fileName;
+		File file = new File(filePath);
+		if(file.exists()) {
+			String directoryAfterSorting[] = forSort.list(processingDirectory);
+			int x = directoryAfterSorting.length;
+			int indexOfFile;
+			for (int i = 0; i < x; i++) {
+	            if (directoryAfterSorting[i] == fileName) {
+	            	 indexOfFile = i;
+	            	 System.out.println("\n" + fileName + "Exist at index " +  indexOfFile + "\n");
+	            }
+	                 
+	        }
+	    }else
+	    	System.out.println("\n" + fileName + " Doses not Exist.....Kindly Check Your Input !!!!!");
+	}
+		
+}
+

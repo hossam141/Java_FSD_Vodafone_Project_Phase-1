@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.IOException;
 
 public class Edit {
+	// Adding the file
 	public static void addFile(String fileName, File dir) {
 		File processingDirectory = dir;
 		String filePath = processingDirectory.getPath() + "\\" + fileName;
@@ -20,6 +21,7 @@ public class Edit {
 		    }
 	}
 	
+    // Deleting the file
 	public static void deleteFile(String fileName, File dir) {
 		File processingDirectory = dir;
 		String filePath = processingDirectory.getPath() + "\\" + fileName;
