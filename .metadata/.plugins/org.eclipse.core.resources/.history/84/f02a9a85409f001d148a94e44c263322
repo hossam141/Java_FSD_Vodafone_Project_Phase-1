@@ -1,0 +1,25 @@
+package lockedme;
+
+import java.io.File;
+
+public class Search {
+	public static int search(File dir, String fileName) {
+		File processingDirectory = dir;
+		String filePath = processingDirectory.getPath() + "\\" + fileName;
+		File file = new File(filePath);
+		if(file.exists()) {
+			String directoryAfterSorting[] = List.list(processingDirectory);
+			
+			int n = directoryAfterSorting.length;
+			
+			for (int i = 0; i < n; i++) {
+	            if (directoryAfterSorting[i] == fileName)
+	                 return i;
+	        }
+	        return -1;
+	    }else
+	    	return -1;
+	}
+		
+}
+

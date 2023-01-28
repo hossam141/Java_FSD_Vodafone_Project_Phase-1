@@ -1,0 +1,9 @@
+package lockedme;
+
+public class Search {
+	public static void search() {
+		
+		
+	}
+
+}

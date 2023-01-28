@@ -6,6 +6,7 @@ import java.util.Scanner;
 public class ClientInterface {
 	static File workingDirectory = null;
 	
+	//Insert the working directory
 	public static void workingDirectory(){
 		do {
 			Scanner sc = new Scanner(System.in);
@@ -23,6 +24,7 @@ public class ClientInterface {
 		}while(!workingDirectory.isDirectory());	
     }
 	
+	//Welcome to user
 	public static void welcome(){
 		System.out.println("Welcome to LockedMe File System !!!!!\n");
 		System.out.println("Developed by: Hossam Mousa\n");
@@ -30,12 +32,13 @@ public class ClientInterface {
 		workingDirectory();
 	}
 	
+	//The display menu
 	public static void runningMenu() {
 		System.out.println("Select one of the below options: ");
 		System.out.println("[1]List Existing Files");
-		System.out.println("[2]Add A New File");
-		System.out.println("[3]Delete An Existing File");
-		System.out.println("[4]Search For A File");
+		System.out.println("[2]Search For A File");
+		System.out.println("[3]Add A New File");
+		System.out.println("[4]Delete An Existing File");
 		System.out.println("[5]Change Your Working Directory");
 		System.out.println("[6]Exit from LockedMe");
 	}
@@ -45,8 +48,9 @@ public class ClientInterface {
 		welcome();
 		Scanner sc1 = new Scanner(System.in);
 		boolean exit = false;
-		new Edit();
 		new List();
+		new Search();
+		new Edit();
 		while(!exit) {
 			runningMenu();
 			int choice = sc1.nextInt();
@@ -56,19 +60,26 @@ public class ClientInterface {
 				switch(choice) {
 				case 1:
 					System.out.println("\nHere you are the contents of the your working directory: \n");
-					List.list(workingDirectory);
+					String accendingDir[] = List.list(workingDirectory);
+					for(String f:accendingDir) {
+			        	System.out.println(f);
+			        }
+					System.out.println("\n");
 					break;
 				case 2:
+					System.out.println("\nPlease Enter The File Name: \n");
+					String fileToSearch = sc1.next();
+					Search.search(workingDirectory, fileToSearch);
+					break;
+				case 3:
 					System.out.println("Enter The File Name You Want To Add: \n");
 					String fileToAdd = sc1.next();
 					Edit.addFile(fileToAdd, workingDirectory);
 					break;
-				case 3:
+				case 4:
 					System.out.println("Enter The File Name You Want To Delete: \n");
 					String fileToDelete = sc1.next();
 					Edit.deleteFile(fileToDelete, workingDirectory);
-					break;
-				case 4:
 					break;
 				case 5:
 					workingDirectory();

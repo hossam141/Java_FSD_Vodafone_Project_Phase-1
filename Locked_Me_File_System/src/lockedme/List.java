@@ -5,10 +5,9 @@ import java.util.*;
 
 public class List {
 	
-	public static void list(File dir){
+	public static String[] list(File dir){
 		File Directory = dir;
 		String files[] = Directory.list();
-		
 		int n = files.length;
 		String temp;
 		 
@@ -22,10 +21,7 @@ public class List {
                 }
             }
         }
-        for(String f:files) {
-        	System.out.println(f);
-        }
-        System.out.println("\n");
+        return files;
 	}
 
 }
