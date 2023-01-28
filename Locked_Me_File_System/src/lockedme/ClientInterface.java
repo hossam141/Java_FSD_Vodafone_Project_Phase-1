@@ -46,6 +46,7 @@ public class ClientInterface {
 		Scanner sc1 = new Scanner(System.in);
 		boolean exit = false;
 		new Edit();
+		new List();
 		while(!exit) {
 			runningMenu();
 			int choice = sc1.nextInt();
@@ -55,6 +56,7 @@ public class ClientInterface {
 				switch(choice) {
 				case 1:
 					System.out.println("\nHere you are the contents of the your working directory: \n");
+					List.list(workingDirectory);
 					break;
 				case 2:
 					System.out.println("Enter The File Name You Want To Add: \n");

@@ -1,0 +1,16 @@
+package lockedme;
+
+import java.io.File;
+import java.util.*;
+
+// Using Bubble Sort
+public class Sort {
+	
+	public static String [] insertFolder(File dir) {
+		File Directory = dir;
+		return Directory.list();
+	}
+	
+
+
+}
