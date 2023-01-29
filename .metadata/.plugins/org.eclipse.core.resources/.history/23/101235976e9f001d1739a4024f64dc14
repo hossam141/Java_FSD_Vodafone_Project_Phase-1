@@ -1,7 +1,6 @@
 package lockedme;
 
 import java.io.File;
-import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class ClientInterface {
@@ -44,6 +43,16 @@ public class ClientInterface {
 		System.out.println("[6]Exit from LockedMe");
 	}
 	
+	static boolean isNumber(String s)
+    {
+        for (int i = 0; i < s.length(); i++)
+            if (Character.isDigit(s.charAt(i)) == false)
+                return false;
+ 
+        return true;
+    }
+	
+	
 	public static void main(String[] args) {
 		welcome();
 		Scanner sc1 = new Scanner(System.in);
@@ -51,65 +60,55 @@ public class ClientInterface {
 		new List();
 		new Search();
 		new Edit();
-		int choice = 0;
 		while(!exit) {
 			runningMenu();
-			
-			// Validate your input is an Integer.
-			while (true) {
-				try {
-					//Take the input from the user
-					choice = sc1.nextInt();
-					break;
-				} catch (InputMismatchException exception) {
-					System.out.println("\nYou enterd unvalid option, please select valid one !!!!\n");
+			int choice = sc1.nextInt();
+			Integer number = choice;
+			String input = number.toString();
+			if(isNumber(input)) {
+				if (choice < 1 || choice > 6) 
+					System.out.println("You eneterd unvalid option, please select valid one !!!!");
+				else {
+					switch(choice) {
+					case 1:
+						System.out.println("\nHere you are the contents of the your working directory: \n");
+						String accendingDir[] = List.list(workingDirectory);
+						for(String f:accendingDir) {
+				        	System.out.println(f);
+				        }
+						System.out.println("\n");
+						break;
+					case 2:
+						System.out.println("\nPlease Enter The File Name: \n");
+						String fileToSearch = sc1.next();
+						Search.search(workingDirectory, fileToSearch);
+						break;
+					case 3:
+						System.out.println("Enter The File Name You Want To Add: \n");
+						String fileToAdd = sc1.next();
+						Edit.addFile(fileToAdd, workingDirectory);
+						break;
+					case 4:
+						System.out.println("Enter The File Name You Want To Delete: \n");
+						String fileToDelete = sc1.next();
+						Edit.deleteFile(fileToDelete, workingDirectory);
+						break;
+					case 5:
+						workingDirectory();
+						break;
+					case 6:
+						exit = true;
+						break;
+					}
 				}
-				sc1.nextLine();
-			}
 			
-			// Validate your input is one of the valid options to operate.
-			if (choice < 1 || choice > 6) 
-				System.out.println("\nYou eneterd unvalid option, please select valid one !!!!\n");
-			else {
-				switch(choice) {
-				case 1:
-					System.out.println("\nHere you are the contents of the your working directory: \n");
-					String accendingDir[] = List.list(workingDirectory);
-					for(String f:accendingDir) {
-			        	System.out.println(f);
-			        }
-					System.out.println("\n");
-					break;
-				case 2:
-					System.out.println("\nPlease Enter The File Name: \n");
-					String fileToSearch = sc1.next();
-					Search.search(workingDirectory, fileToSearch);
-					break;
-				case 3:
-					System.out.println("Enter The File Name You Want To Add: \n");
-					String fileToAdd = sc1.next();
-					Edit.addFile(fileToAdd, workingDirectory);
-					break;
-				case 4:
-					System.out.println("Enter The File Name You Want To Delete: \n");
-					String fileToDelete = sc1.next();
-					Edit.deleteFile(fileToDelete, workingDirectory);
-					break;
-				case 5:
-					workingDirectory();
-					break;
-				case 6:
-					exit = true;
-					break;
-				}
+			}else {
+				System.out.println("Your Input Is Not Valid !!!");
 			}
-		}	
-		System.out.println("Logged out successfully from LockedMe.... Goodbye!!!");	
+		}
+		
+		System.out.println("Logged out successfully from LockedMe.... Goodbye!!!");
+		
 	}
+
 }
-			
-		
-		
-		
-
-
