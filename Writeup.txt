@@ -1,0 +1,16 @@
+Git Repo URL: https://github.com/hossam141/Java_FSD_Vodafone_Project_Phase-1.git 
+-----------------------------------------------------------------------------------
+Sprint[1] ==> Duration 1 week
+	- Working on the design and the flow of the project.
+	- Working on the code of GUI Interface.
+	- Working on the Add file functionality.
+	- Working on the Delete file functionality.
+-----------------------------------------------------------------------------------
+Sprint[2] ==> Duration 2 week
+	- Finding the suitable "Sort Algorithm". ===> [Bubble Sort Alg.]
+	- Working on List functionality using Sort Algorithm.
+	- Finding the suitable "Search Algorithm". ===> [Linear Search Alg.]
+	- Working on Search functionality using Search Algorithm.
+-----------------------------------------------------------------------------------
+Sprint[3] ==> Duration 1 week
+	- Working on Enhance the code and fix some bugs and errors.
