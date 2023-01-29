@@ -54,20 +54,15 @@ public class ClientInterface {
 		int choice = 0;
 		while(!exit) {
 			runningMenu();
-			
-			// Validate your input is an Integer.
 			while (true) {
 				try {
-					//Take the input from the user
 					choice = sc1.nextInt();
 					break;
 				} catch (InputMismatchException exception) {
-					System.out.println("\nYou enterd unvalid option, please select valid one !!!!\n");
+					System.out.println("\nYou eneterd unvalid option, please select valid one !!!!\n");
 				}
-				sc1.nextLine();
+				
 			}
-			
-			// Validate your input is one of the valid options to operate.
 			if (choice < 1 || choice > 6) 
 				System.out.println("\nYou eneterd unvalid option, please select valid one !!!!\n");
 			else {
