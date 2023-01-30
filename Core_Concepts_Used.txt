@@ -1,0 +1,19 @@
+==> Core Concepts Used in this project as bellow:
+
+1- OOP ==> Using Classes dedicated for each Operation.
+
+2- Depend on Error Handling for Unchecked Errrors to robust the code.
+
+3- Using Condition like (If-Switch).
+
+4- Using File Class to deal with files.
+
+5- Using Array to deal with files as array in portions of Sorting and Searching Alg.
+
+6- Using Bubble Sort Alg. 
+
+7- Using Linear Search Alg.
+
+8- Using Input Class like (Scanner).
+
+9- Using For-Each to iterate.
